@@ -9,10 +9,14 @@ and mount disks. When it comes to mounting /opt the
 existing chef install disappears. At this point you almost
 certainly have to end your chef run and begin a new one for
 the next set of tasks, but before you can do that, you need
-to re-install chef. You could use "knife prepare", or you
-use this recipe. i.e.
+to re-install chef. You could use "knife prepare", this recipe,
+or a variety of other methods. 
+i.e.
+
 1) runlist = recipe[mount /opt],recipe[reinstall_chef]
+
  ... end of that chef run ... then ...
+ 
 2) runlist = recipe[the next thing you need to do, now /opt is mounted]
 
 * Only tested on el6 and el7 (Centos etc)
