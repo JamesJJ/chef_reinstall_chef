@@ -9,7 +9,8 @@ remote_file _filename do
   owner 'root'
   group 'root'
   source node['reinstall_chef']['download']
-end.run_action(:install) unless node['reinstall_chef']['download'].nil?
+  action :nothing
+end.run_action(:create) unless node['reinstall_chef']['download'].nil?
 
 _execute = (node['reinstall_chef']['download'] == node['reinstall_chef']['execute']) ?
   "bash #{_filename}" : node['reinstall_chef']['execute']
