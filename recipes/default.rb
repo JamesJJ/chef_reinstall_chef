@@ -2,7 +2,7 @@
 # Recipe:: default
 #
 
-_filename = File.join('/opt',File.basename(node['reinstall_chef']['download']))
+_filename = File.join('/tmp',"reinstall_chef_" + File.basename(node['reinstall_chef']['download']))
 
 remote_file _filename do
   mode '0400'
